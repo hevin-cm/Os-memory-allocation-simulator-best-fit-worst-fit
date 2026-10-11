@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Allocation Simulator</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+    <header>
+        <h1>MEMORY ALLOCATION SIMULATOR</h1>
+        <p>Best Fit vs Worst Fit · Operating System · Stage 2</p>
+    </header>
+
+    <main>
+        <section class="box">
+            <h2>1. Enter Input</h2>
+
+            <label for="blocks">Memory Blocks (KB, comma-separated)</label>
+            <input type="text" id="blocks" value="100, 500, 200, 300, 600">
+
+            <label for="processes">Process Sizes (KB, comma-separated)</label>
+            <input type="text" id="processes" value="212, 417, 112, 426">
+
+            <p id="error"></p>
+        </section>
+
+        <section class="box">
+            <h2>2. Select Algorithm &amp; Run</h2>
+
+            <div class="buttons">
+                <button class="best" onclick="runOne('Best Fit')">
+                    Best Fit
+                </button>
+
+                <button class="worst" onclick="runOne('Worst Fit')">
+                    Worst Fit
+                </button>
+
+                <button class="compare" onclick="compareBoth()">
+                    Compare Both
+                </button>
+
+                <button class="reset" onclick="resetAll()">
+                    Reset
+                </button>
+
+                <button class="exit" onclick="exitApp()">
+                    Exit
+                </button>
+            </div>
+        </section>
+
+        <section class="box">
+            <h2>3. Allocation Results</h2>
+            <div id="results" class="results">
+                <p class="placeholder">Enter the inputs and run a simulation.</p>
+            </div>
+        </section>
+
+        <section class="box">
+            <h2>4. Performance Comparison</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Best Fit</th>
+                            <th>Worst Fit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparison">
+                        <tr>
+                            <td colspan="3">Run Compare Both to see the comparison.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="summary" class="summary">
+                The performance summary will appear here.
+            </div>
+        </section>
+
+        <footer>
+            Memory Allocation Simulator | Operating System Project
+        </footer>
+    </main>
+
+    <script src="js.js"></script>
+</body>
+</html>
